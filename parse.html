@@ -16,6 +16,7 @@
     
     <!-- GLOBAL RESOURCES -->
     <link rel="stylesheet" href="//brand.unimelb.edu.au/web-templates/1-0-0/css/complete.css">
+	<link rel="stylesheet" href="//brand.unimelb.edu.au/global-header/css/style.css">
     <script src="//brand.unimelb.edu.au/web-templates/1-0-0/js/complete.js"></script>
     <!-- GLOBAL RESOURCES -->
     
@@ -46,7 +47,7 @@
     <MySource_DECLARE name="content_width" value="col-6" type="text" description="The width, in columns, of the main content area."/>
     </MySource_AREA>
 </head>
-<body class="<MySource_PRINT id_name='template_vars' var='body_class' />">
+<body class="<MySource_PRINT id_name='template_vars' var='body_class' /> m%globals_date_m% d%globals_date_d% wd%globals_date_w% wk%globals_date_W%">
 <div class="wrapper">
     <div class="header">
         <div class="hgroup">
@@ -54,6 +55,10 @@
         </div>
         <hr>
     </div>
+	
+	<MySource_AREA id_name="news_banner" design_area="nest_content" cache="1"><MySource_SET name="type_codes" value="page" /></MySource_AREA>
+	
+	<div class="page">
 
     <div class='main <MySource_PRINT id_name="template_vars" var="content_width" />' id='main-content' role='main'>
     <MySource_AREA id_name="auto_heading" design_area="asset_lineage">
@@ -61,7 +66,7 @@
     </MySource_AREA>
         <MySource_AREA id_name="body" design_area="body" />
     </div><!-- /main-content -->
-    
+	
 <MySource_AREA id_name="standard_menu" design_area="menu_normal" cache="1"> 
 <MySource_SET name="level" value="top" /> 
 <MySource_SET name="show_subs" value="always" />
@@ -121,7 +126,7 @@
     </div><!-- /sidebar -->
     <hr>
 </MySource_AREA>
-
+</div><!-- /page -->
 </div><!-- /wrapper -->
 <hr>
 <div class="footer">
